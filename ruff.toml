@@ -1,0 +1,15 @@
+line-length = 100
+target-version = "py311"
+
+[lint]
+# E, F = pycodestyle errors + pyflakes (real bugs: unused imports, undefined names, etc.)
+# I = isort (import ordering)
+select = ["E", "F", "I"]
+
+# Line-length is already handled by the `line-length` setting above;
+# ignoring E501 avoids double-flagging and noisy diffs on existing code.
+ignore = ["E501"]
+
+[lint.per-file-ignores]
+# Alembic migration files are generated - don't lint them.
+"alembic/versions/*" = ["E", "F", "I"]
