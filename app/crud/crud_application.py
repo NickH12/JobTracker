@@ -1,8 +1,10 @@
 from sqlalchemy.orm import Session
+
 from app.models.application import Application
 from app.models.company import Company
 from app.models.enums import ApplicationStatus
 from app.schemas.application import ApplicationCreate, ApplicationStatResponse, ApplicationUpdate
+
 
 def create_application(db: Session, application: ApplicationCreate, user_id: int) -> Application | None:
     #query for company first if exists

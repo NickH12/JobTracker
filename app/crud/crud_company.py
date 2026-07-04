@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+
 from app.models.company import Company
 from app.schemas.company import CompanyCreate
 

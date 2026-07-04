@@ -1,14 +1,12 @@
 #api router
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.dependencies import get_current_user
-from app.models.user import User
-
-from app.schemas.company import CompanyResponse
-
 from sqlalchemy.orm import Session
-from app.db.session import get_db
-from app.schemas.company import CompanyCreate
+
+from app.api.dependencies import get_current_user
 from app.crud import crud_company
+from app.db.session import get_db
+from app.models.user import User
+from app.schemas.company import CompanyCreate, CompanyResponse
 
 router = APIRouter()
 

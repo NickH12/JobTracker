@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.api.dependencies import get_current_user
-from app.models.enums import ApplicationStatus
-from app.models.user import User    
-from app.schemas.application import ApplicationCreate, ApplicationResponse, ApplicationUpdate
 from sqlalchemy.orm import Session
-from app.db.session import get_db
+
+from app.api.dependencies import get_current_user
 from app.crud import crud_application
+from app.db.session import get_db
+from app.models.enums import ApplicationStatus
+from app.models.user import User
+from app.schemas.application import ApplicationCreate, ApplicationResponse, ApplicationUpdate
 
 router = APIRouter()
 

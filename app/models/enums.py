@@ -1,5 +1,6 @@
 from enum import Enum
 
+
 class ApplicationStatus(str, Enum):
         SAVED = "saved"
         APPLIED = "applied"
